@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Login Form</title>
+    <!-- Include Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style the registration form container */
+        #registration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Style the registration form elements */
+        #registration-form {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style the login form container (initially hidden) */
+        #login-container {
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Style the login form elements */
+        #login-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #login-form {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style the login button */
+        #login-button {
+            background-color: #ffc107;
+            color: #fff;
+            border: none;
+        }
+
+        /* Style the 'Art' heading in the registration form */
+        #registration-form h1 {
+            color: #ffc107; /* Yellow */
+        }
+    </style>
+</head>
+<body>
+    <div id="registration-container">
+        <div id="registration-form">
+            <h1><span style="color: #ffc107;">Art</span>sy</h1>
+            <form>
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" class="form-control" id="regUsername" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" class="form-control" id="regEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" class="form-control" id="regPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="regConfirmPassword" placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn btn-warning">Register</button>
+            </form>
+            <p>Already registered:</p>
+            <button id="login-button" class="btn btn-warning">Login</button>
+        </div>
+    </div>
+
+    <!-- The login form (initially hidden) -->
+    <div id="login-container">
+        <div id="login-form-container">
+            <div id="login-form">
+                <h1><span style="color: #ffc107;">Art</span>sy</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-warning">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Show the login form when the login button is clicked
+        $("#login-button").click(function() {
+            $("#registration-container").hide();
+            $("#login-container").show();
+        });
+    </script>
+</body>
+</html>
