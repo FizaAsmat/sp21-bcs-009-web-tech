@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTA- landing page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="pta-logo.jpg" alt="..." style="max-width: 100px;">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" style="margin: 0;">Pakistan Telecommunication Authority</a>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 horizontal-list">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Links">Links</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#FAQs">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact-us">Contact us</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="#Industry-Support">Industry Support</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Consumer">Consumer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Media-Item">Media Center</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="#Legislation">Legislation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Date-&-Research">Date & Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Determination">Determination</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Cyber-Security">Cyber Security</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Gender-Inclusion-in-ICTs">Gender Inclusion in ICTs</a>
+                </li>
+              </ul>
+        </div>
+      </nav>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="1st pta.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>PTA and TikTok Sign MoU to Foster a Safer Digital Environment for Pakistani Youth</h1>
+              <p><a href="#" class="btn btn-warning mt-3">Click Here >></a></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="2nd pta.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>Temporary Registration of Mobile Device for Overseas Pakistanis & Foreign Nationals</h1>
+              <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="3rd pta.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h1>SATRC Workshop on PRS Concludes Successfully</h1>
+              <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class=" mb-4 font-weight-bold text-warning "> About PTA</h5>
+                <ul class="custom-list">
+                    <li><a href="#Functions"></a>Functions</li>
+                    <li><a href="#Vision"></a>Vision</li>
+                    <li><a href="#The-Authority"></a>The Authority</li>
+                    <li><a href="#Divisions"></a>Divisions</li>
+                </ul>
+                <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class=" mb-4 font-weight-bold text-warning "> e-Services</h5>
+                <ul class="custom-list">
+                    <li><a href="#DIRBS"></a>DIRBS</li>
+                    <li><a href="#Apply-COC-for-Mobile-Devices"></a>Apply COC for Mobile Devices</li>
+                    <li><a href="#Numbering"></a>Numbering</li>
+                    <li><a href="#Complaints"></a>Complaints</li>
+                </ul>
+                <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class=" mb-4 font-weight-bold text-warning "> Quick Links</h5>
+                <ul class="custom-list">
+                    <li><a href="#List-of-Parental-Control-Software"></a>List of Parental Control Software</li>
+                    <li><a href="#Spectrum-Auctions"></a>Spectrum Auctions</li>
+                    <li><a href="#Social-Media-Company-Registration"></a>Social Media Company Registration</li>
+                    <li><a href="RBS-Applications"></a>RBS Applications</li>
+                </ul>
+                <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class=" mb-4 font-weight-bold text-warning "> Zonal Offices</h5>
+                <ul class="custom-list">
+                    <li><a href="#Lahore"></a>Lahore</li>
+                    <li><a href="#Karachi"></a>Karachi</li>
+                    <li><a href="#Peshawar"></a>Peshawar</li>
+                    <li><a href="#Quetta"></a>Quetta</li>
+                </ul>
+                <p><a href="#" class="btn btn-warning mt-3">Read More >></a></p>
+            </div>
+        </div>
+      </div>
+      <footer class=" pt-5 pb-4">
+        <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class=" mb-4 font-weight-bold text-warning">Contact</h5>
+                <p>
+                  <i class="bi bi-home mr-3"></i>New York, NY 2333, US
+                </p>
+                <p>
+                  <i class="bi bi-envelope  mr-3"></i>Artsy@gmail.com
+                </p>
+                <p>
+                  <i class="bi bi-phone  mr-3"></i>+92 333768363
+                </p>
+                <p>
+                  <i class="bi bi-print  mr-3"></i>+01 335 633 77
+                </p>
+              </div>
+              
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class=" mb-4 font-weight-bold text-warning">General Information</h5>
+              <p>
+                <a href="#" style="text-decoration: none;">media</a>
+              </p>
+              <p>
+                <a href="#" style="text-decoration: none;">cyber</a>
+              </p>
+              <p>
+                <a href="#"  style="text-decoration: none;">Architectural</a>
+              </p>
+              <p>
+                <a href="#"  style="text-decoration: none;">teli</a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h5 class=" mb-4 font-weight-bold text-warning">e services</h5>
+              <p>
+                <a href="#"  style="text-decoration: none;">Become Affiliate</a>
+              </p>
+              <p>
+                <a href="#"  style="text-decoration: none;">Shipping rate</a>
+              </p>
+              <p>
+                <a href="#"  style="text-decoration: none;">Help</a>
+              </p>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <div class="row-align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <p>Copyrights 02020 All rights reserved by:
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </footer>
+      <script>
+        // jQuery code to hide the horizontal list when the logo is clicked
+        $(".logo img").click(function() {
+            $(".horizontal-list").hide();
+            // horizontl-list.style.display = 'none';
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
