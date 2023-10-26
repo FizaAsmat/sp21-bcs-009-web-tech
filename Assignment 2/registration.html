@@ -122,5 +122,109 @@
             $("#login-container").show();
         });
     </script>
+        <script>
+            $(document).ready(function() {
+                // Initialize registered users (empty at the beginning)
+                var registeredUsers = {};
+        
+                // Show the login form when the login button is clicked
+                $("#login-button").click(function() {
+                    $("#registration-container").hide();
+                    $("#login-container").show();
+                });
+        
+                // Registration form submit event handler
+                $("#registration-form form").submit(function(event) {
+                    event.preventDefault();
+        
+                    // Get the form fields' values
+                    var regUsername = $("#regUsername").val();
+                    var regEmail = $("#regEmail").val();
+                    var regPassword = $("#regPassword").val();
+                    var regConfirmPassword = $("#regConfirmPassword").val();
+        
+                    // Reset any previous error messages and styling
+                    $(".error").remove();
+                    $(".form-control").css("background-color", "");
+        
+                    // Basic validation
+                    var valid = true;
+        
+                    // Check username length
+                    if (regUsername.length > 8) {
+                        $("#regUsername").after('<span class="error">Username is too long (max 8 characters)</span>');
+                        $("#regUsername").css("background-color", "red");
+                        valid = false;
+                    }
+                    if (regUsername === "") {
+                        $("#regUsername").after('<span class="error">Username is required</span>');
+                        $("#regUsername").css("background-color", "red");
+                        valid = false;
+                    }
+        
+                    if (regEmail === "") {
+                        $("#regEmail").after('<span class="error">Email is required</span>');
+                        $("#regEmail").css("background-color", "red");
+                        valid = false;
+                    } else if (!isValidEmail(regEmail)) {
+                        $("#regEmail").after('<span class="error">Invalid email address</span>');
+                        $("#regEmail").css("background-color", "red");
+                        valid = false;
+                    }
+                    if (regPassword.length < 4) {
+                        $("#regPassword").after('<span class="error">Password is too short (min 4 characters)</span>');
+                        $("#regPassword").css("background-color", "red");
+                        valid = false;
+                    }
+                    if (regPassword === "") {
+                        $("#regPassword").after('<span class="error">Password is required</span>');
+                        $("#regPassword").css("background-color", "red");
+                        valid = false;
+                    }
+                    if (regConfirmPassword === "") {
+                        $("#regConfirmPassword").after('<span class="error">Confirm password is required</span>');
+                        $("#regConfirmPassword").css("background-color", "red");
+                        valid = false;
+                    }
+                    if (regPassword !== regConfirmPassword) {
+                        $("#regPassword, #regConfirmPassword").after('<span class="error">Passwords do not match</span>');
+                        $("#regPassword, #regConfirmPassword").css("background-color", "red");
+                        valid = false;
+                    }
+        
+                    // If there are no errors, store the user and display a success message
+                    if (valid) {
+                        registeredUsers[regUsername] = regPassword;
+                        $("#registration-form").html('<div class="success">Registration successful!</div>');
+                    }
+                });
+        
+                // Login form submit event handler
+                $("#login-form form").submit(function(event) {
+                    event.preventDefault();
+        
+                    // Get the form fields' values
+                    var loginUsername = $("#loginUsername").val();
+                    var loginPassword = $("#loginPassword").val();
+        
+                    // Reset any previous error messages and styling
+                    $(".error").remove();
+                    $(".form-control").css("background-color", "");
+        
+                    // Check if the entered credentials match the registered users
+                    if (registeredUsers.hasOwnProperty(loginUsername) && registeredUsers[loginUsername] === loginPassword) {
+                        $("#login-form").html('<div class="success">Login successful!</div>');
+                    } else {
+                        $("#loginUsername, #loginPassword").after('<span class="error">Wrong credentials</span>');
+                    }
+                });
+        
+                // Function to validate email format
+                function isValidEmail(email) {
+                    var emailRegex = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+                    return email.match(emailRegex);
+                }
+            });
+        </script>
 </body>
 </html>
