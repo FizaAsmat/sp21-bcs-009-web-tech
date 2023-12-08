@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Login Form</title>
+    <!-- Include Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style the registration form container */
+        #registration-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Style the registration form elements */
+        #registration-form {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style the login form container (initially hidden) */
+        #login-container {
+            display: none; /* Initially hidden */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Style the login form elements */
+        #login-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        #login-form {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style the login button */
+        #login-button {
+            background-color: #ffc107;
+            color: #fff;
+            border: none;
+        }
+
+        /* Style the 'Art' heading in the registration form */
+        #registration-form h1 {
+            color: #ffc107; /* Yellow */
+        }
+    </style>
+</head>
+<body>
+    <div id="registration-container">
+        <div id="registration-form">
+            <h1><span style="color: #ffc107;">Art</span>sy</h1>
+            <form>
+                <div class="form-group">
+                    <label for="regUsername">Username</label>
+                    <input type="text" class="form-control" id="regUsername" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" class="form-control" id="regEmail" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" class="form-control" id="regPassword" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="regConfirmPassword" placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn btn-warning">Register</button>
+            </form>
+            <p>Already registered:</p>
+            <button id="login-button" class="btn btn-warning">Login</button>
+        </div>
+    </div>
+
+    <!-- The login form (initially hidden) -->
+    <div id="login-container">
+        <div id="login-form-container">
+            <div id="login-form">
+                <h1><span style="color: #ffc107;">Art</span>sy</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-warning">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show the login form when the login button is clicked
+        $("#login-button").click(function() {
+            $("#registration-container").hide();
+            $("#login-container").show();
+        });
+    </script>
+    <!-- Add this script block to your HTML, preferably just before the closing </body> tag -->
+    <script>
+        $(document).ready(function () {
+            // Show the login form when the login button is clicked
+            $("#login-button").click(function () {
+                $("#registration-container").hide();
+                $("#login-container").show();
+            });
+    
+            // Registration form submit event handler
+            $("#registration-form form").submit(function (event) {
+                event.preventDefault();
+    
+                // Get the form fields' values
+                var regUsername = $("#regUsername").val();
+                var regEmail = $("#regEmail").val();
+                var regPassword = $("#regPassword").val();
+                var regConfirmPassword = $("#regConfirmPassword").val();
+    
+                // Reset any previous error messages and styling
+                $(".error").remove();
+                $(".form-control").css("background-color", "");
+    
+                // Basic validation
+                var valid = true;
+    
+                // Check if all fields are filled
+                if (regUsername === "" || regEmail === "" || regPassword === "" || regConfirmPassword === "") {
+                    $(".form-control").after('<span class="error">All fields are required</span>');
+                    $(".form-control").css("background-color", "red");
+                    valid = false;
+                }
+    
+                // Check if password is at least 6 characters
+                if (regPassword.length < 6) {
+                    $("#regPassword").after('<span class="error">Password should be at least 6 characters</span>');
+                    $("#regPassword").css("background-color", "red");
+                    valid = false;
+                }
+    
+                // Validate syntax of Gmail address
+                if (regEmail !== "" && !isValidGmail(regEmail)) {
+                    $("#regEmail").after('<span class="error">Invalid Gmail address</span>');
+                    $("#regEmail").css("background-color", "red");
+                    valid = false;
+                }
+    
+                // If there are no errors, display a success message
+                if (valid) {
+                    $("#registration-form").html('<div class="success">Registration successful!</div>');
+                }
+            });
+    
+            // Login form submit event handler
+            $("#login-form form").submit(function (event) {
+                event.preventDefault();
+    
+                // Get the form fields' values
+                var loginUsername = $("#loginUsername").val();
+                var loginPassword = $("#loginPassword").val();
+    
+                // Reset any previous error messages and styling
+                $(".error").remove();
+                $(".form-control").css("background-color", "");
+    
+                // Check if all fields are filled
+                if (loginUsername === "" || loginPassword === "") {
+                    $(".form-control").after('<span class="error">All fields are required</span>');
+                    $(".form-control").css("background-color", "red");
+                } else {
+                    // Display a success message for login
+                    $("#login-form").html('<div class="success">Login successful!</div>');
+                    window.location.href = 'index.html';
+                }
+            });
+    
+            // Function to validate syntax of Gmail address
+            function isValidGmail(email) {
+                var gmailRegex = /^[a-zA-Z0-9._-]+@gmail\.com$/;
+                return email.match(gmailRegex);
+            }
+        });
+    </script>
+</body>
+</html>
