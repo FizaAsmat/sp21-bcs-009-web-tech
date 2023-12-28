@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+.yellow-text {
+  color: rgb(255, 211, 37);
+}
+.navbar{
+  font-size: 17px;
+  line-height: 26px;
+  box-shadow: 0 8px 6px -6px gray;
+  border-bottom: solid grey;
+}
+.nav-link{
+  font-weight: 300;
+}
+.active{
+  border-bottom: 1px solid black;
+}
+.navbar-brand{
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+/* pagenotfound */
+/* .pnf {
+} */
+
+/* homepage */
+.section-padding {
+  padding: 100px 0;
+}
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+}
+.carousel-caption {
+  bottom: 40px;
+  z-index: 2;
+}
+.carousel-caption h5 {
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+.carousel-caption p {
+  width: 60%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+}
+.carousel-inner::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(40, 37, 37, 0.7);
+  z-index: 1;
+}
+.art .card {
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 15);
+}
+/* resposive css */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.carousel-caption {
+  bottom: 370px;
+}
+.carousel-caption p {
+  width: 100%;
+}
+.card {
+  margin-bottom: 30px;
+}
+.img-area img {
+  width: 100%;
+}
+}
+@media only screen and (max-width: 767px) {
+.navbar-nav {
+  text-align: center;
+}
+.carousel-caption {
+  bottom: 125px;
+}
+.carousel-caption h5 {
+  font-size: 17px;
+}
+.carousel-caption a {
+  padding: 10px 15px;
+  font-size: 15px;
+}
+.carousel-caption p {
+  width: 100%;
+  line-height: 1.6;
+  font-size: 12px;
+}
+.artist-text {
+  padding-top: 50px;
+}
+.card {
+  margin-bottom: 30px;
+}
+}
+
+/* register page */
+.register{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
+}
+
